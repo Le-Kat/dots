@@ -46,10 +46,7 @@
 	users.users.nas = {
 		
 		isNormalUser = true;
-		packages = with pkgs; [
-			
-			syncthing
-		];
+		home = "/home/nas" # TODO: set to external drive
 	};
 	
 	# List packages installed in system profile. To search, run:
@@ -111,10 +108,10 @@
 		permitRootLogin = "yes";
 	};
 	
-	users.users."root".openssh.authorizedKeys.keys = [
+	users.users.root.openssh.authorizedKeys.keys = [
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFiepHVWb7SVXSOISOIUgVauZY2Zyp0QTwsbqX8BhMZh le3kat@laptop"
 	];
-	users.users."nas".openssh.authorizedKeys.keys = [
+	users.users.nas.openssh.authorizedKeys.keys = [
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFiepHVWb7SVXSOISOIUgVauZY2Zyp0QTwsbqX8BhMZh le3kat@laptop"
 	];
 	
